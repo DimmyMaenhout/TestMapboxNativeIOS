@@ -7,4 +7,7 @@ target 'TestMapboxNativeIOS' do
 
   # Pods for TestMapboxNativeIOS
 
+  pod "MapboxCoreNavigation", "~> 1.4.1"
+  pod "MapboxNavigation", "~> 1.4.1"
+	pod "Mapbox-iOS-SDK"
 end
