@@ -181,7 +181,7 @@ extension ViewController: NavigationServiceDelegate {
         print()
         
         mapView.updateUpcomingRoutePointIndex(routeProgress: progress)
-        mapView.updateTraveledRouteLine(location.coordinate)
+//        mapView.updateTraveledRouteLine(location.coordinate)
         mapView.updateRoute(progress)
     }
     
@@ -206,7 +206,7 @@ extension ViewController: NavigationServiceDelegate {
         mapView.show([routeProgress.route])
         
         mapView.updateUpcomingRoutePointIndex(routeProgress: routeProgress)
-        mapView.updateTraveledRouteLine(navigationService.router.location?.coordinate)
+//        mapView.updateTraveledRouteLine(navigationService.router.location?.coordinate)
         mapView.updateRoute(routeProgress)
     }
 }

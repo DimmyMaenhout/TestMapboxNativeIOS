@@ -15,9 +15,11 @@
 		63CB468727706AAE007B1338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CB468527706AAE007B1338 /* Main.storyboard */; };
 		63CB468927706AB0007B1338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CB468827706AB0007B1338 /* Assets.xcassets */; };
 		63CB468C27706AB0007B1338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CB468A27706AB0007B1338 /* LaunchScreen.storyboard */; };
+		FB078F425775E79D1893C5BC /* Pods_TestMapboxNativeIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64852AF121453C7C296B365F /* Pods_TestMapboxNativeIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0212B19F6626CA8223B7D3D6 /* Pods-TestMapboxNativeIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMapboxNativeIOS.release.xcconfig"; path = "Target Support Files/Pods-TestMapboxNativeIOS/Pods-TestMapboxNativeIOS.release.xcconfig"; sourceTree = "<group>"; };
 		63520FD62772338E0036B6E3 /* Aartselaar_Kontich.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Aartselaar_Kontich.gpx; sourceTree = "<group>"; };
 		63520FD8277233970036B6E3 /* MapboxNavigationModuleConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapboxNavigationModuleConfig.swift; sourceTree = "<group>"; };
 		63CB467C27706AAE007B1338 /* TestMapboxNativeIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMapboxNativeIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +30,8 @@
 		63CB468827706AB0007B1338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63CB468B27706AB0007B1338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63CB468D27706AB0007B1338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64852AF121453C7C296B365F /* Pods_TestMapboxNativeIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestMapboxNativeIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94A372C29FCEE4AB6D39FEB2 /* Pods-TestMapboxNativeIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMapboxNativeIOS.debug.xcconfig"; path = "Target Support Files/Pods-TestMapboxNativeIOS/Pods-TestMapboxNativeIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB078F425775E79D1893C5BC /* Pods_TestMapboxNativeIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F910A679467357421EEBE51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64852AF121453C7C296B365F /* Pods_TestMapboxNativeIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28A4AA6E1539A15F3226D692 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94A372C29FCEE4AB6D39FEB2 /* Pods-TestMapboxNativeIOS.debug.xcconfig */,
+				0212B19F6626CA8223B7D3D6 /* Pods-TestMapboxNativeIOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		63CB467327706AAE007B1338 = {
 			isa = PBXGroup;
 			children = (
 				63CB467E27706AAE007B1338 /* TestMapboxNativeIOS */,
 				63CB467D27706AAE007B1338 /* Products */,
+				28A4AA6E1539A15F3226D692 /* Pods */,
+				1F910A679467357421EEBE51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63CB469027706AB0007B1338 /* Build configuration list for PBXNativeTarget "TestMapboxNativeIOS" */;
 			buildPhases = (
+				280397D882AE2533BC10F572 /* [CP] Check Pods Manifest.lock */,
 				63CB467827706AAE007B1338 /* Sources */,
 				63CB467927706AAE007B1338 /* Frameworks */,
 				63CB467A27706AAE007B1338 /* Resources */,
+				FB6AA2D0F6CC3D026E7ED2A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,6 +165,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		280397D882AE2533BC10F572 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestMapboxNativeIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB6AA2D0F6CC3D026E7ED2A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMapboxNativeIOS/Pods-TestMapboxNativeIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMapboxNativeIOS/Pods-TestMapboxNativeIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestMapboxNativeIOS/Pods-TestMapboxNativeIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63CB467827706AAE007B1338 /* Sources */ = {
@@ -292,6 +360,7 @@
 		};
 		63CB469127706AB0007B1338 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94A372C29FCEE4AB6D39FEB2 /* Pods-TestMapboxNativeIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -300,6 +369,7 @@
 				DEVELOPMENT_TEAM = QSK66EYT9M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestMapboxNativeIOS/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to improve the experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,6 +390,7 @@
 		};
 		63CB469227706AB0007B1338 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0212B19F6626CA8223B7D3D6 /* Pods-TestMapboxNativeIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -328,6 +399,7 @@
 				DEVELOPMENT_TEAM = QSK66EYT9M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestMapboxNativeIOS/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to improve the experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
