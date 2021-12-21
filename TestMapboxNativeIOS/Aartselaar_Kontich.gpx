@@ -1,22 +1,159 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="Xcode">
-    
-    <!--
-     Provide one or more waypoints containing a latitude/longitude pair. If you provide one
-     waypoint, Xcode will simulate that specific location. If you provide multiple waypoints,
-     Xcode will simulate a route visiting each waypoint.
-     -->
-    <wpt lat="37.331705" lon="-122.030237">
-        <name>Cupertino</name>
-        
-        <!--
-         Optionally provide a time element for each waypoint. Xcode will interpolate movement
-         at a rate of speed based on the time elapsed between each waypoint. If you do not provide
-         a time element, then Xcode will use a fixed rate of speed.
-         
-         Waypoints must be sorted by time in ascending order.
-         -->
-        <time>2014-09-24T14:55:37Z</time>
-    </wpt>
-    
+  <wpt lat="51.1412657" lon="4.3756739"></wpt>
+  <wpt lat="51.1417702" lon="4.4422838"></wpt>
+  <wpt lat="51.1412838" lon="4.3754764"></wpt>
+  <wpt lat="51.14159" lon="4.37555"></wpt>
+  <wpt lat="51.141589" lon="4.3755475"></wpt>
+  <wpt lat="51.14159" lon="4.37657"></wpt>
+  <wpt lat="51.14161" lon="4.37757"></wpt>
+  <wpt lat="51.1416073" lon="4.3775666"></wpt>
+  <wpt lat="51.1416073" lon="4.3775666"></wpt>
+  <wpt lat="51.14241" lon="4.37776"></wpt>
+  <wpt lat="51.1424074" lon="4.3777562"></wpt>
+  <wpt lat="51.14242" lon="4.37812"></wpt>
+  <wpt lat="51.14244" lon="4.37864"></wpt>
+  <wpt lat="51.14246" lon="4.37892"></wpt>
+  <wpt lat="51.1424599" lon="4.3789224"></wpt>
+  <wpt lat="51.14245" lon="4.37925"></wpt>
+  <wpt lat="51.14244" lon="4.37944"></wpt>
+  <wpt lat="51.14243" lon="4.3796"></wpt>
+  <wpt lat="51.14243" lon="4.38025"></wpt>
+  <wpt lat="51.14243" lon="4.38048"></wpt>
+  <wpt lat="51.14243" lon="4.38089"></wpt>
+  <wpt lat="51.14246" lon="4.38132"></wpt>
+  <wpt lat="51.14252" lon="4.38178"></wpt>
+  <wpt lat="51.14287" lon="4.38371"></wpt>
+  <wpt lat="51.14296" lon="4.38424"></wpt>
+  <wpt lat="51.14315" lon="4.38541"></wpt>
+  <wpt lat="51.14325" lon="4.38599"></wpt>
+  <wpt lat="51.14342" lon="4.38708"></wpt>
+  <wpt lat="51.14351" lon="4.38754"></wpt>
+  <wpt lat="51.14363" lon="4.38823"></wpt>
+  <wpt lat="51.14368" lon="4.38847"></wpt>
+  <wpt lat="51.14377" lon="4.38884"></wpt>
+  <wpt lat="51.14382" lon="4.389"></wpt>
+  <wpt lat="51.14395" lon="4.38945"></wpt>
+  <wpt lat="51.14406" lon="4.38977"></wpt>
+  <wpt lat="51.14423" lon="4.39027"></wpt>
+  <wpt lat="51.1443" lon="4.39047"></wpt>
+  <wpt lat="51.14445" lon="4.39106"></wpt>
+  <wpt lat="51.14449" lon="4.39126"></wpt>
+  <wpt lat="51.14456" lon="4.39191"></wpt>
+  <wpt lat="51.1446" lon="4.39257"></wpt>
+  <wpt lat="51.1448" lon="4.39564"></wpt>
+  <wpt lat="51.14478" lon="4.39593"></wpt>
+  <wpt lat="51.14456" lon="4.39739"></wpt>
+  <wpt lat="51.14455" lon="4.39746"></wpt>
+  <wpt lat="51.14428" lon="4.39932"></wpt>
+  <wpt lat="51.14422" lon="4.39985"></wpt>
+  <wpt lat="51.14414" lon="4.4021"></wpt>
+  <wpt lat="51.1441" lon="4.4047"></wpt>
+  <wpt lat="51.1440965" lon="4.4046995"></wpt>
+  <wpt lat="51.14409" lon="4.40649"></wpt>
+  <wpt lat="51.14407" lon="4.40694"></wpt>
+  <wpt lat="51.14403" lon="4.40741"></wpt>
+  <wpt lat="51.14383" lon="4.40861"></wpt>
+  <wpt lat="51.14365" lon="4.40961"></wpt>
+  <wpt lat="51.14362" lon="4.40979"></wpt>
+  <wpt lat="51.14342" lon="4.41096"></wpt>
+  <wpt lat="51.14338" lon="4.41116"></wpt>
+  <wpt lat="51.14319" lon="4.4124"></wpt>
+  <wpt lat="51.14314" lon="4.41268"></wpt>
+  <wpt lat="51.14309" lon="4.41287"></wpt>
+  <wpt lat="51.1429" lon="4.41358"></wpt>
+  <wpt lat="51.14235" lon="4.4155"></wpt>
+  <wpt lat="51.14097" lon="4.42057"></wpt>
+  <wpt lat="51.14059" lon="4.42197"></wpt>
+  <wpt lat="51.1405" lon="4.42226"></wpt>
+  <wpt lat="51.1402" lon="4.42341"></wpt>
+  <wpt lat="51.14007" lon="4.42396"></wpt>
+  <wpt lat="51.14005" lon="4.42409"></wpt>
+  <wpt lat="51.14005" lon="4.42413"></wpt>
+  <wpt lat="51.14002" lon="4.42431"></wpt>
+  <wpt lat="51.14001" lon="4.4244"></wpt>
+  <wpt lat="51.14" lon="4.42451"></wpt>
+  <wpt lat="51.13998" lon="4.42471"></wpt>
+  <wpt lat="51.13984" lon="4.42593"></wpt>
+  <wpt lat="51.13981" lon="4.42619"></wpt>
+  <wpt lat="51.13969" lon="4.42732"></wpt>
+  <wpt lat="51.13966" lon="4.42762"></wpt>
+  <wpt lat="51.13963" lon="4.42789"></wpt>
+  <wpt lat="51.1396" lon="4.42817"></wpt>
+  <wpt lat="51.1396" lon="4.42818"></wpt>
+  <wpt lat="51.13957" lon="4.42845"></wpt>
+  <wpt lat="51.13954" lon="4.42869"></wpt>
+  <wpt lat="51.13952" lon="4.42889"></wpt>
+  <wpt lat="51.13951" lon="4.42897"></wpt>
+  <wpt lat="51.1395" lon="4.42907"></wpt>
+  <wpt lat="51.13948" lon="4.42924"></wpt>
+  <wpt lat="51.13948" lon="4.42925"></wpt>
+  <wpt lat="51.13948" lon="4.42927"></wpt>
+  <wpt lat="51.13947" lon="4.42938"></wpt>
+  <wpt lat="51.13946" lon="4.4294"></wpt>
+  <wpt lat="51.13945" lon="4.42953"></wpt>
+  <wpt lat="51.13942" lon="4.4298"></wpt>
+  <wpt lat="51.13942" lon="4.42982"></wpt>
+  <wpt lat="51.13942" lon="4.42985"></wpt>
+  <wpt lat="51.1394" lon="4.43006"></wpt>
+  <wpt lat="51.13934" lon="4.43053"></wpt>
+  <wpt lat="51.13931" lon="4.43081"></wpt>
+  <wpt lat="51.13917" lon="4.43193"></wpt>
+  <wpt lat="51.13916" lon="4.43208"></wpt>
+  <wpt lat="51.13915" lon="4.43214"></wpt>
+  <wpt lat="51.13914" lon="4.43228"></wpt>
+  <wpt lat="51.13913" lon="4.43236"></wpt>
+  <wpt lat="51.13913" lon="4.43239"></wpt>
+  <wpt lat="51.13907" lon="4.43289"></wpt>
+  <wpt lat="51.13896" lon="4.43357"></wpt>
+  <wpt lat="51.1389" lon="4.43385"></wpt>
+  <wpt lat="51.13887" lon="4.43399"></wpt>
+  <wpt lat="51.13863" lon="4.4349"></wpt>
+  <wpt lat="51.13857" lon="4.43513"></wpt>
+  <wpt lat="51.13821" lon="4.43646"></wpt>
+  <wpt lat="51.13815" lon="4.43671"></wpt>
+  <wpt lat="51.13809" lon="4.43692"></wpt>
+  <wpt lat="51.13798" lon="4.43732"></wpt>
+  <wpt lat="51.13788" lon="4.43765"></wpt>
+  <wpt lat="51.13775" lon="4.4382"></wpt>
+  <wpt lat="51.13769" lon="4.43844"></wpt>
+  <wpt lat="51.13763" lon="4.43867"></wpt>
+  <wpt lat="51.13756" lon="4.43892"></wpt>
+  <wpt lat="51.1375576" lon="4.4389167"></wpt>
+  <wpt lat="51.13748" lon="4.43916"></wpt>
+  <wpt lat="51.13775" lon="4.43906"></wpt>
+  <wpt lat="51.13782" lon="4.43903"></wpt>
+  <wpt lat="51.13826" lon="4.43889"></wpt>
+  <wpt lat="51.13859" lon="4.43879"></wpt>
+  <wpt lat="51.13913" lon="4.43861"></wpt>
+  <wpt lat="51.14001" lon="4.43829"></wpt>
+  <wpt lat="51.14026" lon="4.4382"></wpt>
+  <wpt lat="51.1402588" lon="4.4382008"></wpt>
+  <wpt lat="51.14027" lon="4.43833"></wpt>
+  <wpt lat="51.14027" lon="4.43848"></wpt>
+  <wpt lat="51.14026" lon="4.43901"></wpt>
+  <wpt lat="51.14025" lon="4.43938"></wpt>
+  <wpt lat="51.14025" lon="4.43956"></wpt>
+  <wpt lat="51.14024" lon="4.4398"></wpt>
+  <wpt lat="51.14024" lon="4.44008"></wpt>
+  <wpt lat="51.14023" lon="4.44057"></wpt>
+  <wpt lat="51.14022" lon="4.44081"></wpt>
+  <wpt lat="51.14022" lon="4.44114"></wpt>
+  <wpt lat="51.14021" lon="4.44129"></wpt>
+  <wpt lat="51.140212" lon="4.4412852"></wpt>
+  <wpt lat="51.14042" lon="4.44134"></wpt>
+  <wpt lat="51.14052" lon="4.44138"></wpt>
+  <wpt lat="51.14064" lon="4.44143"></wpt>
+  <wpt lat="51.14066" lon="4.44144"></wpt>
+  <wpt lat="51.14094" lon="4.44156"></wpt>
+  <wpt lat="51.14097" lon="4.44157"></wpt>
+  <wpt lat="51.14127" lon="4.44172"></wpt>
+  <wpt lat="51.14138" lon="4.44177"></wpt>
+  <wpt lat="51.14143" lon="4.44179"></wpt>
+  <wpt lat="51.1414329" lon="4.4417914"></wpt>
+  <wpt lat="51.14139" lon="4.44202"></wpt>
+  <wpt lat="51.1413887" lon="4.4420244"></wpt>
+  <wpt lat="51.14173" lon="4.44218"></wpt>
+  <wpt lat="51.14178" lon="4.44221"></wpt>
+  <wpt lat="51.1417841" lon="4.4422074"></wpt>
 </gpx>
