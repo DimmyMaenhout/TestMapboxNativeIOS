@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         mapView.showsUserLocation = true
 //        mapView.setUserTrackingMode(.followWithHeading, animated: true, completionHandler: nil)
         mapView.routeLineTracksTraversal = true
-//        mapView.tracksUserCourse = true
+        mapView.tracksUserCourse = true
         
 //        let camera = MGLMapCamera(lookingAtCenter: mapView.userLocation, altitude: 14.0, pitch: CGFloat, heading: mapView.userLocation?.heading)
         
@@ -187,13 +187,13 @@ extension ViewController: NavigationServiceDelegate {
         
         print(progress.currentLegProgress.fractionTraveled)
         
-        
-        
         mapView.updateUpcomingRoutePointIndex(routeProgress: progress)
         mapView.updateTraveledRouteLine(location.coordinate)
         mapView.updateRoute(progress)
         
         mapView.show([progress.route])
+        
+        mapView.updateCourseTracking(location: location, animated: true)
         
     }
     
