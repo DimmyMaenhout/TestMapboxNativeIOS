@@ -58,7 +58,7 @@ class ViewController: UIViewController {
 //        mapView.setCenter(startCoordinate, zoomLevel: 16.0, animated: true)
         mapView.showsUserLocation = true
 //        mapView.setUserTrackingMode(.followWithHeading, animated: true, completionHandler: nil)
-        
+        mapView.routeLineTracksTraversal = true
 //        mapView.tracksUserCourse = true
         
 //        let camera = MGLMapCamera(lookingAtCenter: mapView.userLocation, altitude: 14.0, pitch: CGFloat, heading: mapView.userLocation?.heading)
@@ -88,19 +88,24 @@ class ViewController: UIViewController {
                 strongSelf.navigationService = MapboxNavigationService(route: route, routeIndex: 0, routeOptions: navigationRouteOptions)
                 strongSelf.navigationService.delegate = self
                 let credentials = strongSelf.navigationService.directions.credentials
-                strongSelf.voiceController = RouteVoiceController(navigationService: strongSelf.navigationService, accessToken: credentials.accessToken, host: credentials.host.absoluteString)
-                
+//                strongSelf.voiceController = RouteVoiceController(navigationService: strongSelf.navigationService, accessToken: credentials.accessToken, host: credentials.host.absoluteString)
+//
                 
                 strongSelf.mapView.show([route]) // route aan meegeven
                 
-                strongSelf.mapView.courseTrackingDelegate?.navigationMapViewDidStartTrackingCourse(strongSelf.mapView)
+                //strongSelf.mapView.courseTrackingDelegate?.navigationMapViewDidStartTrackingCourse(strongSelf.mapView)
                 
                 self?.mapView.traversedRouteColor = .black
+                //self?.mapView.tracksUserCourse = true
+                
+                self?.mapView.userTrackingMode = .followWithCourse
+                
+            
                 
                 self?.navigationService.start()
                 
-                // Pass the generated route to the the NavigationViewController
-//                self?.navigationViewController = NavigationViewController(for: route, routeIndex: 0, routeOptions: navigationRouteOptions)
+//                // Pass the generated route to the the NavigationViewController
+                self?.navigationViewController = NavigationViewController(for: route, routeIndex: 0, routeOptions: navigationRouteOptions)
 //                self?.navigationViewController.modalPresentationStyle = .fullScreen
 //                self?.navigationViewController.routeLineTracksTraversal = true
 //                self?.present((self?.navigationViewController)!, animated: true, completion: nil)
@@ -173,16 +178,23 @@ extension ViewController: NavigationServiceDelegate {
         
         
 //        mapView.recenterMap()
-//        mapView.traversedRouteColor = .red
-//        mapView.tracksUserCourse = true
+        //mapView.traversedRouteColor = .red
+        //mapView.tracksUserCourse = true
         
 //        mapView.setCenter(mapView.userLocation!.coordinate, zoomLevel: 14.0, animated: true)
-//        print("line 184 didUpdate progress, routeProgress: \(routeProgressString)")
-        print()
+//        print("line 184 didUpdate progress, routeProgress: \(routeProgressString)")\
+       // print(routeProgressString)
+        
+        print(progress.currentLegProgress.fractionTraveled)
+        
+        
         
         mapView.updateUpcomingRoutePointIndex(routeProgress: progress)
-//        mapView.updateTraveledRouteLine(location.coordinate)
+        mapView.updateTraveledRouteLine(location.coordinate)
         mapView.updateRoute(progress)
+        
+        mapView.show([progress.route])
+        
     }
     
     func navigationService(_ service: NavigationService, didPassVisualInstructionPoint instruction: VisualInstructionBanner, routeProgress: RouteProgress) {
@@ -203,15 +215,31 @@ extension ViewController: NavigationServiceDelegate {
 //    }
     
     func navigationService(_ service: NavigationService, didRefresh routeProgress: RouteProgress) {
-        mapView.show([routeProgress.route])
+        
+        print("Refresh")
+        print(routeProgress)
+        //mapView.show([routeProgress.route])
         
         mapView.updateUpcomingRoutePointIndex(routeProgress: routeProgress)
 //        mapView.updateTraveledRouteLine(navigationService.router.location?.coordinate)
         mapView.updateRoute(routeProgress)
     }
+    
+    func navigationService(_ service: NavigationService, willEndSimulating progress: RouteProgress, becauseOf reason: SimulationIntent) {
+        print(reason)
+        
+    }
+    
+    func navigationService(_ service: NavigationService, didEndSimulating progress: RouteProgress, becauseOf reason: SimulationIntent) {
+        print(reason)
+    }
+    
+    
 }
 
 extension ViewController: MGLMapViewDelegate {
+    
+    
     
 }
 

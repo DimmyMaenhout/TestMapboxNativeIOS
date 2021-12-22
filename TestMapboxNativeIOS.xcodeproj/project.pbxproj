@@ -366,7 +366,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QSK66EYT9M;
+				DEVELOPMENT_TEAM = C54J7ZZL3V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestMapboxNativeIOS/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to improve the experience";
@@ -396,7 +396,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QSK66EYT9M;
+				DEVELOPMENT_TEAM = C54J7ZZL3V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestMapboxNativeIOS/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to improve the experience";
