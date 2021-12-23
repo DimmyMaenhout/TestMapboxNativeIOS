@@ -32,6 +32,29 @@ class ViewController: UIViewController {
     private let startCoordinate = CLLocationCoordinate2D(latitude: 4.375606188596978, longitude: 51.14121566158028)
     private let endCoordinate = CLLocationCoordinate2D(latitude: 4.441955998895892, longitude: 51.14179615098452)
     
+    private var isNavigationActive: Bool = false {
+        didSet {
+            startNavigationButton.isHidden = isNavigationActive
+        }
+    }
+    
+    // MARK: - UI
+    
+    private let startNavigationButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Start navigation", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.cornerRadius = 6
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        button.addTarget(self, action: #selector(startNavigation), for: .touchUpInside)
+
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: - Init
     
     func initialize(_ accessToken: String, language: String, enableLogging: Bool) {
@@ -50,21 +73,37 @@ class ViewController: UIViewController {
                    language: "nl_BE",
                    enableLogging: true)
         
+        setupMapView()
+        setupStartNavigationButton()
+    }
+    
+    // MARK: - methods
+    
+    private func setupMapView() {
         mapView =  NavigationMapView(frame: view.bounds)
         mapView.delegate = self
         mapView.tintColor = .red
         mapView.attributionButton.tintColor = .lightGray
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        mapView.setCenter(startCoordinate, zoomLevel: 16.0, animated: true)
         mapView.showsUserLocation = true
-//        mapView.setUserTrackingMode(.followWithHeading, animated: true, completionHandler: nil)
         mapView.routeLineTracksTraversal = true
         mapView.tracksUserCourse = true
-        
-//        let camera = MGLMapCamera(lookingAtCenter: mapView.userLocation, altitude: 14.0, pitch: CGFloat, heading: mapView.userLocation?.heading)
-        
-        
+                
         view.addSubview(mapView)
+    }
+    
+    private func setupStartNavigationButton() {
+        view.addSubview(startNavigationButton)
+
+        NSLayoutConstraint.activate([
+            startNavigationButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -32),
+            startNavigationButton.centerXAnchor.constraint(equalTo: mapView.centerXAnchor)
+        ])
+    }
+    
+    @objc private func startNavigation() {
+        
+        isNavigationActive = true
         
         // Define two waypoints to travel between
         let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 51.14121566158028, longitude: 4.375606188596978))
@@ -88,34 +127,26 @@ class ViewController: UIViewController {
                 strongSelf.navigationService = MapboxNavigationService(route: route, routeIndex: 0, routeOptions: navigationRouteOptions)
                 strongSelf.navigationService.delegate = self
                 let credentials = strongSelf.navigationService.directions.credentials
-//                strongSelf.voiceController = RouteVoiceController(navigationService: strongSelf.navigationService, accessToken: credentials.accessToken, host: credentials.host.absoluteString)
-//
+                strongSelf.voiceController = RouteVoiceController(navigationService: strongSelf.navigationService, accessToken: credentials.accessToken, host: credentials.host.absoluteString)
                 
                 strongSelf.mapView.show([route]) // route aan meegeven
                 
-                //strongSelf.mapView.courseTrackingDelegate?.navigationMapViewDidStartTrackingCourse(strongSelf.mapView)
-                
-                self?.mapView.traversedRouteColor = .black
                 //self?.mapView.tracksUserCourse = true
                 
                 self?.mapView.userTrackingMode = .followWithCourse
                 
-            
-                
-                self?.navigationService.start()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+                    self?.navigationService.start()
+                }
                 
 //                // Pass the generated route to the the NavigationViewController
-                self?.navigationViewController = NavigationViewController(for: route, routeIndex: 0, routeOptions: navigationRouteOptions)
+//                self?.navigationViewController = NavigationViewController(for: route, routeIndex: 0, routeOptions: navigationRouteOptions)
 //                self?.navigationViewController.modalPresentationStyle = .fullScreen
 //                self?.navigationViewController.routeLineTracksTraversal = true
 //                self?.present((self?.navigationViewController)!, animated: true, completion: nil)
             }
         }
-        
-        
     }
-    
-    // MARK: - methods
 
     
 }
@@ -169,21 +200,9 @@ extension ViewController {
 
 extension ViewController: NavigationServiceDelegate {
     func navigationService(_ service: NavigationService, didUpdate progress: RouteProgress, with location: CLLocation, rawLocation: CLLocation) {
-//        mapView.updateRoute(progress)
-//        mapView.updateUserLocationAnnotationViewAnimated(withDuration: 0.0005)
         let routeProgressString = convertObjectToJsonString(object: progress)
         
-//        mapView.setCenter(location.coordinate, zoomLevel: 14.0, animated: true)
-//        mapView.updateCourseTracking(location: location)
-        
-        
-//        mapView.recenterMap()
-        //mapView.traversedRouteColor = .red
-        //mapView.tracksUserCourse = true
-        
-//        mapView.setCenter(mapView.userLocation!.coordinate, zoomLevel: 14.0, animated: true)
 //        print("line 184 didUpdate progress, routeProgress: \(routeProgressString)")\
-       // print(routeProgressString)
         
         print(progress.currentLegProgress.fractionTraveled)
         
@@ -213,6 +232,14 @@ extension ViewController: NavigationServiceDelegate {
 //        print()
 //        print()
 //    }
+    
+    func navigationService(_ service: NavigationService, didArriveAt waypoint: Waypoint) -> Bool {
+        
+        print()
+        isNavigationActive = false
+        navigationService.stop()
+        return true
+    }
     
     func navigationService(_ service: NavigationService, didRefresh routeProgress: RouteProgress) {
         
